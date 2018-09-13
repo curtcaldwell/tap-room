@@ -29,7 +29,7 @@ September 2018
 * Bootstrap
 
 ### Support and Contact Details
-If you encounter any bugs or would like to make suggestions regarding this project, please feel free to contact one of our engineers eliotcharette@gmail.com
+If you encounter any bugs or would like to make suggestions regarding this project, please feel free to contact one of our engineers curt.caldwell24@gmail.com
 
 ### License
 

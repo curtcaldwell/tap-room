@@ -11,15 +11,15 @@ function Header() {
           }
 
             `}</style>
-          <div className='Header'>
-            <div>
-              <h1>Seattle Brewery</h1>
-              <button><Link to="/">Home</Link></button>
-              <button><Link to="/newkeg">Add Keg</Link></button>
-              </div>
-            </div>
-          </div>
-        );
-      }
+      <div className='Header'>
+        <div>
+          <h1>Seattle Brewery</h1>
+          <button><Link to="/">Home</Link></button>
+          <button><Link to="/newkeg">Add Keg</Link></button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-      export default Header;
+export default Header;
