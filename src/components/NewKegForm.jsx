@@ -1,4 +1,5 @@
 import React from 'react';
+import hop from '../assets/hop.jpg';
 
 
 function NewTicketForm(){
@@ -6,7 +7,7 @@ function NewTicketForm(){
     <div>
       <style jsx>{`
           .form {
-            background-color: lightblue;
+            background-image: url(${hop});
           }
           input {
             width: 47.2%;

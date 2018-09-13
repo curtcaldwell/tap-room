@@ -1,6 +1,7 @@
 import React from 'react';
 import ConfirmationQuestions from './ConfirmationQuestions';
 import NewKegForm from './NewKegForm';
+import background from '../assets/background.jpg';
 
 class NewKegControl extends React.Component {
   constructor(props) {
@@ -24,6 +25,12 @@ class NewKegControl extends React.Component {
     }
     return (
       <div>
+        <style global jsx>{`
+            body {
+              background-image: url(${background});
+            }
+          `}
+        </style>
         {currentlyVisibleContent}
       </div>
     );
