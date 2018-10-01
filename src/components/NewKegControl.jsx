@@ -17,13 +17,13 @@ class NewKegControl extends React.Component {
   }
 
   render(){
-    let currentlyVisibleContent = null;
-    if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewKegForm />;
-    } else {
-      currentlyVisibleContent = <ConfirmationQuestions onTroubleshootingConfirmation={this.handleTroubleShootingConfirmation}/>;
-    }
-    return (
+  let currentlyVisibleContent = null;
+  if (this.state.formVisibleOnPage){
+    currentlyVisibleContent = <NewKegForm onNewKegCreation={this.props.onNewKegCreation}/>;
+  } else {
+    currentlyVisibleContent = <ConfirmationQuestions onTroubleshootingConfirmation={this.handleTroubleShootingConfirmation}/>;
+  }
+  return (
     <div>
       {currentlyVisibleContent}
     </div>

@@ -38,17 +38,20 @@ handleAddingNewKegToList(newKeg){
 }
 
 
-  render() {
+render(){
   return (
     <div className="container">
       <Header/>
       <Switch>
         <Route exact path='/' component={KegList} />
-        <Route path='/newkeg' component={NewKegControl} />
+        <Route path='/newkeg' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKegToList} />} />
+        <Route path='/requests' render={()=><RotatingList kegList={this.state.rotatingKegList} />} />
         <Route component={Error404} />
       </Switch>
     </div>
   );
 }
+
 }
+
 export default App;
