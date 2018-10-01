@@ -1,8 +1,29 @@
 import React from 'react';
-import hop from '../assets/hop.jpg';
+import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
+import Moment from 'moment';
 
+function NewKegForm(props){
+  let _beer = null;
+  let _brewer = null;
+  let _name = null;
+  let _email = null;
+  let _comments = null;
+  let _thumbsUp = 0;
+  let _thumbsDown = 0;
 
-function NewTicketForm(){
+  function handleNewKegFormSubmission(event) {
+  event.preventDefault();
+  props.onNewKegCreation({beer: _beer.value, brewer: _brewer.value, name: _name.value, email: _email.value, comments: _comments.value, thumbsUp: _thumbsUp, thumbsDown: _thumbsDown, id: v4(), timeOpen: new Moment()});
+  _beer.value = '';
+  _brewer.value = '';
+  _name.value = '';
+  _email.value = '';
+  _comments.value = '';
+  _thumbsUp = 0;
+  _thumbsDown = 0;
+}
+
   return (
     <div>
       <style jsx>{`
@@ -26,33 +47,41 @@ function NewTicketForm(){
           }
       `}
 
-      </style>
+    </style>
       <div className="form">
-        <form>
+        <form onSubmit={handleNewKegFormSubmission}>
+          <input
+            type='text'
+            id='beer'
+            placeholder='New Beer'
+            ref={(input) => {_beer = input;}}/>
+          <input
+            type='text'
+            id='brewer'
+            placeholder='Brewery'
+            ref={(input) => {_brewer = input;}}/>
           <input
             type='text'
             id='name'
-            placeholder='New Beer'/>
+            placeholder='Your Name'
+            ref={(input) => {_name = input;}}/>
           <input
             type='text'
-            id='brewery'
-            placeholder='Brewery'/>
-          <input
-            type='text'
-            id='price'
-            placeholder='Price'/>
-          <input
-            type='text'
-            id='remaining'
-            placeholder='Pints left'/>
+            id='email'
+            placeholder='Email'
+            ref={(input) => {_email = input;}}/>
           <textarea
-            id='description'
-            placeholder='Add a description'/>
-          <button className="btn btn-success" type='submit'>Add New Beer</button>
+            id='comments'
+            placeholder='Add a comment'
+            ref={(textarea) => {_comments = textarea;}}/>
+          <button className="btn btn-success" type='submit'>Request Beer</button>
         </form>
       </div>
     </div>
   );
 }
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func
+};
 
 export default NewTicketForm;
