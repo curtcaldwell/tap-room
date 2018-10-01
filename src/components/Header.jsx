@@ -14,9 +14,11 @@ function Header() {
       <div className='Header'>
         <div>
           <h1>Seattle Brewery</h1>
-          <button><Link to="/">Home</Link></button>
-          <button><Link to="/newkeg">Add Keg</Link></button>
+        
         </div>
+        <button><Link to="/">Home</Link></button>
+        <button><Link to="/newkeg">Beer Request</Link></button>
+        <button><Link to="/requests">Requested Beer List</Link></button>
       </div>
     </div>
   );

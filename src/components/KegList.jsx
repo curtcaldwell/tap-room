@@ -61,15 +61,30 @@ const masterKegList = [
 function KegList() {
   return (
     <div>
-      {masterKegList.map((keg, index) =>
-        <Keg name={keg.name}
-          description={keg.description}
-          brewer={keg.brewer}
-          price={keg.price}
-          remaining={keg.remaining}
-          img={keg.img}
-          key={index}/>
-      )}
+      <style jsx>{`
+        .head {
+          text-align: center
+          background-image: url(${kegs});
+        }
+        img {
+          object-fit: cover;
+        }
+        `}
+      </style>
+      <div className="head">
+
+      </div>
+      <div>
+        {masterKegList.map((keg, index) =>
+          <Keg name={keg.name}
+            description={keg.description}
+            brewer={keg.brewer}
+            price={keg.price}
+            remaining={keg.remaining}
+            img={keg.img}
+            key={index}/>
+        )}
+      </div>
     </div>
   );
 }

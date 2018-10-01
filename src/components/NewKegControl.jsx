@@ -24,17 +24,14 @@ class NewKegControl extends React.Component {
       currentlyVisibleContent = <ConfirmationQuestions onTroubleshootingConfirmation={this.handleTroubleShootingConfirmation}/>;
     }
     return (
-      <div>
-        <style global jsx>{`
-            body {
-              background-image: url(${background});
-            }
-          `}
-        </style>
-        {currentlyVisibleContent}
-      </div>
-    );
-  }
+    <div>
+      {currentlyVisibleContent}
+    </div>
+  );
 }
+}
+NewKegControl.propTypes = {
+onNewKegCreation: PropTypes.func
+};
 
 export default NewKegControl;
